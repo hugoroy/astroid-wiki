@@ -58,7 +58,7 @@ you can add several lines for different tags. A successful exit status (0) will 
 > - **thread-id** - currently selected thread
 
 > Hook return exit value:
-> - **0 (true)** - an **emit_thread_updated** signal is emitted, causing the thread to be updated in all thread indexes.
+> - **0 (true)** - an **emit_thread_updated** signal is emitted, causing the thread to be updated in all views.
 > - **!0 (false)** - no action
 
 

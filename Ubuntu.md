@@ -1,5 +1,7 @@
 On a fresh Ubuntu 15.10 the following was required to get astroid going - but you should be able to get away with less.
 
+The libsass-dev package is not available on Ubuntu 14.04 LTS due to [dependency issues](https://github.com/gauteh/astroid/issues/110). When building astroid on this release use the `--disable-sass` build option.
+
 Install these packages:
 ```
 git \

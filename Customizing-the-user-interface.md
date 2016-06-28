@@ -8,13 +8,13 @@ You can copy the standard HTML and SCSS file from the [ui/ directory](https://gi
 
 You can change `font-size`, `font-family` and some other variables for the whole style by just setting the SCSS variables at the top of [thread-view.scss](https://github.com/gauteh/astroid/blob/master/ui/thread-view.scss).
 
-#### The Recommended Way: Only changing the variables, but keeping up-to-date
+##### Only change variable settings - and use the rest of the default styles
 If you only want to change the standard variables, but still use the default theme and _follow_ any updates made upstream, create a `~/.config/astroid/ui/thread-view.scss` file, set the variables, and then include the standard file:
 
 > Remember to keep the version line at the top intact!
 
 ```css
-/* ui-version: 2 (do not change when modifying theme for yourself) */
+/* ui-version: 3 (do not change when modifying theme for yourself) */
 /* Variables */
 /* Background colors associated with received emails: */
 $recv-normal: #ffffff;

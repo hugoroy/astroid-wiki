@@ -1,4 +1,4 @@
-Patches and pull-requests against the [master](https://github.com/gauteh/astroid) branch may be submitted either as a [pull-request](https://github.com/gauteh/astroid/pulls) here on github or as a patch (or series of) to:
+Patches and pull-requests (normally against the [master](https://github.com/astroidmail/astroid) branch) should be submitted either as a [pull-request](https://github.com/gauteh/astroid/pulls) here on github or as a patch (or series of) to:
 
 * notmuch@notmuchmail.org
 * astroidmail@googlegroups.com

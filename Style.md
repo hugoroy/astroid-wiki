@@ -51,7 +51,7 @@ static some_type Cls:function (param_type param, param_type param) {
   wrapped at 70 columns.
 
 * Almost always; `if` statements should have `{` and `}` blocks (even for single statements), if not, then the single statement should be on the same line as the if:
-```
+```c++
 if (true) statement;
 ```
 

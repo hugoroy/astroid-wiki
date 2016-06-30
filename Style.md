@@ -50,6 +50,13 @@ static some_type Cls:function (param_type param, param_type param) {
 * Code lines should be less than 80 columns and comments should be
   wrapped at 70 columns.
 
+* Almost always; `if` statements should have `{` and `}` blocks (even for single statements), if not, then the single statement should be on the same line as the if:
+```
+if (true) statement;
+```
+
+* Never use single-line if-statements if it includes an `else`.
+
 #### Naming
 
 * Use lowercase_with_underscores for function, variable, and type

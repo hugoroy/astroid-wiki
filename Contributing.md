@@ -39,11 +39,13 @@ usually you are on the `master` branch. But if you want to check out `feature1` 
 $ git checkout feature1
 $ git pull # maybe add --force
 $ scons # re-build
+$ scons test
 ```
 
 whenever you have done a new pull, recompile with:
 ```sh
 $ scons
+$ scons test
 ```
 
 to go back to the master branch (or _update_ the master branch) do:
@@ -51,4 +53,7 @@ to go back to the master branch (or _update_ the master branch) do:
 $ git checkout master
 $ git pull # make sure it's up-to-date
 $ scons # recompile master branch
+$ scons test
 ```
+
+Always make sure that tests pass before submitting a pull-request.

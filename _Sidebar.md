@@ -26,6 +26,6 @@
 
 
 # Development
-
+* [[Plugins]]
 * [[Contributing]]
   + [[Style]]

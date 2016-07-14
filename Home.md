@@ -31,8 +31,10 @@ Demos (screencasts):
 * [[Editing and sending]]
   +  [[Customizing editor]]
   +  [[Address completion]]
+* [[Signing, Encrypting and Decrypting]]
+
 
 # Development
-
+* [[Plugins]]
 * [[Contributing]]
   + [[Style]]

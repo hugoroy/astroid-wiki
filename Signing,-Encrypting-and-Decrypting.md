@@ -1,3 +1,19 @@
+### Auto trusting
+You can set `crypto.gpg.always_trust` to `true` (default) to use keys for verification, even though they are not locally verified. Otherwise all keys must be locally verified: `gpg --lsign-key key`.
+
+Setting `always_trust` to `true` will result in a successful verification for untrusted keys, but will show the level of trust in the message. If set to `false` the signature verification will fail for untrusted keys.
+
+### Verification: auto-key-retrieve
+
+You can set `crypto.gpg.auto_key_retrieve` to `false` to override a `keyserver-option auto-key-retrieve` in your `.gnupg/gpg.conf`. 
+
+If you want to have auto-key-retrieve work, you need to enable it *both* in astroid (default: true) and in `gpg.conf`:
+```
+keyserver-options auto-key-retrieve
+```
+
+Note that this will add the key to your keyring (though it will not trust it).
+
 ### Important considerations
 When encrypting to several recipients the keyids of the recipients will be included in the header information of the encrypted message. It is therefore possible to see who all of the intended receivers are. On the other hand, it is possible to fake these keyids so they should not be trusted on incoming emails - that is: you cannot be really sure that the alleged receiver of an encrypted message is really the receiver unless you have the secret key.
 

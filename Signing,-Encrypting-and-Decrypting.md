@@ -15,9 +15,7 @@ Setting `always_trust` to `true` will result in a successful verification for un
 
 ### Verification: auto-key-retrieve
 
-You can set `crypto.gpg.auto_key_retrieve` to `false` to override a `keyserver-option auto-key-retrieve` in your `.gnupg/gpg.conf`. 
-
-If you want to have auto-key-retrieve work, you need to enable it *both* in astroid (default: true) and in `gpg.conf`:
+If you want to automatically retrieve keys set it in `gpg.conf`:
 ```
 keyserver-options auto-key-retrieve
 ```

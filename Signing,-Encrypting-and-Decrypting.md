@@ -1,3 +1,11 @@
+## Setup
+
+1. First make sure you have private and public key pair, check out the [guide on Arch Linux](https://wiki.archlinux.org/index.php/GnuPG#Create_key_pair).
+1. Publish your public key
+1. Set `gpgkey` of the account in the astroid config to either the keyid or your email.
+1. Get the key of the one you want to encrypt a message to (check out `gpg --search-keys`)
+1. You're good.
+
 ### Auto trusting
 You can set `crypto.gpg.always_trust` to `true` (default) to use keys for verification, even though they are not locally verified. Otherwise all keys must be locally verified: `gpg --lsign-key key`.
 

@@ -6,6 +6,8 @@
 1. Get the key of the one you want to encrypt a message to (check out `gpg --search-keys`)
 1. You're good.
 
+> Note that you need a gpg-agent (recent gpg2 require this as well) with a *graphical pinentry*. On Arch Linux `pinentry-libsecret` in AUR allows you to save the password on the GNOME keyring.
+
 ### Auto trusting
 You can set `crypto.gpg.always_trust` to `true` (default) to use keys for verification, even though they are not locally verified. Otherwise all keys must be locally verified: `gpg --lsign-key key`.
 

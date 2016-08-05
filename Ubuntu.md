@@ -16,6 +16,8 @@ libwebkitgtk-3.0-dev \
 libgtkmm-3.0-dev \
 libgmime-2.6-dev \
 libsass-dev
+libpeas-dev
+libgirepository1.0-dev
 ```
 
 To build:

@@ -1,7 +1,5 @@
 Check out [astroid-plugins/official-examples](https://github.com/astroidmail/astroid-plugins), for instance: `ThreadViewExamplePlugin/tagformat.py` and the method `format_tags`. Put this folder in `.config/astroid/plugins/` and run astroid through the wrapper script: `examples/astroid` (to make sure `GI_TYPELIB_PATH` is set when you do not install astroid).
 
-Corresponding issue: #156.
-
 Documentation:
 
 ## General

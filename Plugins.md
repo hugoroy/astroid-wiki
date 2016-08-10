@@ -8,6 +8,12 @@ Documentation:
 
 The environment variable `ASTROID_CONFIG` will be set by astroid, it points to the configuration file usually located in: `~/.config/astroid/config`.
 
+## AstroidActivatable
+##### Functions
+`string user_agent = get_user_agent ()`
+
+`string mid = generate_mid ()`
+
 ## ThreadViewActivatable
 
 ##### Objects

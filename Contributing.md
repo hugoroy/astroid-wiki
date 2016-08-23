@@ -9,6 +9,10 @@ Contributions in the form of testing and documentation is also very welcome.
 
 > All contributions must be made under the GNU GPL v3 licence or later.
 
+## Code of conduct
+
+This project adheres to: http://contributor-covenant.org/version/1/4/
+
 ## Coding style
 
 Please follow the [[Style]] as well as the general conventions in the source code.

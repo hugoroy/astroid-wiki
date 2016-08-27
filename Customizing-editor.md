@@ -26,11 +26,22 @@ emacs --parent-id %3 %1
 
 #### Pro-tip: use notmuch-message-mode
 
-You can use the notmuch-message-mode for composing email in emacs by having this in your emacs config file (replace `@localhost` with your machine's hostname):
+You can use the notmuch-message-mode for composing email in emacs by having this in your emacs config file (replace `user@localhost.domain.tld` with your username and machine hostname):
 
 ```el
 (require 'notmuch)
-(add-to-list 'auto-mode-alist '("\\@localhost\\'" . notmuch-message-mode))
+(add-to-list 'auto-mode-alist '("user@localhost.domain.tld" . notmuch-message-mode))
+```
+
+You can also configure astroid to use a specific username and hostname:
+
+```json
+{
+    "mail": {
+        "message_id_fqdn": "localhost.domain.tld",
+        "message_id_user": "user"
+    }
+}
 ```
 
 ### neovim (through [`st`](http://st.suckless.org/))

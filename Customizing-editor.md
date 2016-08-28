@@ -33,7 +33,9 @@ You can use the notmuch-message-mode for composing email in emacs by having this
 (add-to-list 'auto-mode-alist '("user@localhost.domain.tld" . notmuch-message-mode))
 ```
 
-You can also [configure astroid](./Astroid-setup#configuration) to use a specific username and hostname:
+#### Message ID
+
+You can [configure astroid](./Astroid-setup#configuration) to use a specific username and hostname for the message-id:
 
 ```json
 {

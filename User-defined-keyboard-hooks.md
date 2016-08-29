@@ -29,7 +29,7 @@ if [[ $(notmuch search thread:$2 and tag:$1) ]]; then
   echo "removing tag: $1 from thread:$2"
   notmuch tag -$1 thread:$2
 else
-  echo "adding tag: $1 from thread:$2"
+  echo "adding tag: $1 to thread:$2"
   notmuch tag +$1 thread:$2
 fi
 ``` 

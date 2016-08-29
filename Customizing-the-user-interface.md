@@ -39,3 +39,13 @@ $focused-solid: #4a90d9;
 ## Thread index
 
 Check the configuration options in `~/.config/astroid/config`
+
+### Dates
+
+You can customize the date format in Thread Index with three settings in your config file.
+
+`general.time.clock_format` takes the options `24h` (default), `12h`, `local` and `year`. Using `year` you can avoid dates like "Yesterday" or "2h ago". Using `local` it uses your computer's default locale date format.
+
+With `general.time.same_year` and `general.time.diff_year` you can configure the look of the dates for the current year and for all other years. It takes variables like the ones from GNU/Linux's `date` command. For example `%d.%m. %H:%M` will look like `29.08. 18:50` on August 29 at 18:50 in the current year. Using `%x` may be well suited for different years, since it looks like `29.08.2015`.
+
+Please be aware that the look of dates depend on your computer's locale, especially when it comes to the 24/12h clock format or the placement of days, months and years for sequences like `%x`.

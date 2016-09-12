@@ -31,10 +31,10 @@ this example will overwrite the default keybinding `f` which forwards a message 
 
 Read on to find out how to run custom scripts on keypress and integrate them with Astroid: [[User defined keyboard hooks]].
 
-### Available Bindings
+## Available Bindings
 The key bound can be any combination of the modifiers 'C-' (control), and 'M-' (Meta) followed by either a single unicode character (e.g. '?', 'F', 'a') or a GDK keysym as defined in [gdkkeysyms.h](https://git.gnome.org/browse/gtk+/plain/gdk/gdkkeysyms.h) without the GDK_KEY_ prefix. Note that this is case sensitive. So 'BackSpace' is a valid key to bind, but 'backspace', and 'GDK_KEY_BackSpace' are not.
 
-## Unbinding
+### Unbinding
 To unbind keys put nothing after the '=' sign, for instance
 ```
 thread_view.search_tag=

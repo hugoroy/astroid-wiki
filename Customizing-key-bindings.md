@@ -30,3 +30,13 @@ thread_index.forward_attached=M-f
 this example will overwrite the default keybinding `f` which forwards a message `inlined` or `attached` depending on the configuration option `mail.forward.disposition`. In this particular example the configuration option no longer has any effect, and you choose whether to inline or attach a message depending on the keybinding.
 
 Read on to find out how to run custom scripts on keypress and integrate them with Astroid: [[User defined keyboard hooks]].
+
+### Available Bindings
+The key bound can be any combination of the modifiers 'C-' (control), and 'M-' (Meta) followed by either a single unicode character (e.g. '?', 'F', 'a') or a GDK keysym as defined in [gdkkeysyms.h](https://git.gnome.org/browse/gtk+/plain/gdk/gdkkeysyms.h) without the GDK_KEY_ prefix. Note that this is case sensitive. So 'BackSpace' is a valid key to bind, but 'backspace', and 'GDK_KEY_BackSpace' are not.
+
+## Unbinding
+To unbind keys put nothing after the '=' sign, for instance
+```
+thread_view.search_tag=
+```
+would bind that to nothing, making searching-by-tag an inaccessible action from within astroid

@@ -33,3 +33,7 @@ To run astroid:
 ```
 $ ./astroid
 ```
+
+# Ubuntu xenial
+On xenial, some headers are either missing or different folders than expected (cf https://github.com/astroidmail/astroid/issues/211), hence you need to use this comand:
+`$ CFLAGS="-I/usr/include/libpeas/ -I/usr/include/gobject-introspection-1.0" scons --disable-plugins`

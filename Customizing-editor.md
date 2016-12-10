@@ -1,4 +1,4 @@
-You can choose whether to use an embedded editor (default) or external editor.
+You can choose whether to use an embedded editor (default, does not work on Wayland) or external editor.
 
 ## Embedded editor
 
@@ -10,6 +10,8 @@ The `editor.cmd` string is passed to `ustring::compose`, and the following argum
 > _socketid_: `%3`
 
 It is important that the editor is run in the _forground_ since the process is watched by astroid.
+
+> The embedded editor does not work on Wayland, use the external editor there.
 
 ## External editor
 

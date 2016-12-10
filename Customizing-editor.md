@@ -19,7 +19,7 @@ To use an external editor, set the option `editor.external_editor` to `true`, an
 
 ```
 "editor": {
-        "cmd": "gvim -f %1",
+        "cmd": "gvim -f -c 'set ft=mail' '+set fileencoding=utf-8' '+set ff=unix' '+set enc=utf-8' %1",
         "external_editor": "true",
     },
 ```

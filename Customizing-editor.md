@@ -1,11 +1,29 @@
+You can choose whether to use an embedded editor (default) or external editor.
+
+## Embedded editor
+
 The default configured editor is `gvim` embedded using [XEmbed](https://specifications.freedesktop.org/xembed-spec/xembed-spec-latest.html), but any editor or setup that support `XEmbed` can in principle be used.
 
 The `editor.cmd` string is passed to `ustring::compose`, and the following arguments must be set:
 > _filename_: `%1`  
 > _servername_: `%2` (probably optional)  
-> _socketid_: `%3`  
+> _socketid_: `%3`
 
-## Editor suggestions
+It is important that the editor is run in the _forground_ since the process is watched by astroid.
+
+## External editor
+
+To use an external editor, set the option `editor.external_editor` to `true`, and specify only the file argument (`%1`) in the editor command:
+
+```
+"editor": {
+        "cmd": "gvim -f %1",
+        "external_editor": "true",
+    },
+```
+
+
+## Embedded editor suggestions
 
 ### gvim (default)
 ```sh

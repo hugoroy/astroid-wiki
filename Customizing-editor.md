@@ -53,7 +53,14 @@ You can use the notmuch-message-mode for composing email in emacs by having this
 (add-to-list 'auto-mode-alist '("user@localhost.domain.tld" . notmuch-message-mode))
 ```
 
-#### Message ID
+### neovim (through [`st`](http://st.suckless.org/))
+```sh
+st -f 'Monospace' -w %3 -e nvim %1
+``` 
+
+you could use another terminal, but it must support `XEmbed`, like [st](http://st.suckless.org/).
+
+## Message ID
 
 You can [configure astroid](./Astroid-setup#configuration) to use a specific username and hostname for the message-id:
 
@@ -65,10 +72,3 @@ You can [configure astroid](./Astroid-setup#configuration) to use a specific use
     }
 }
 ```
-
-### neovim (through [`st`](http://st.suckless.org/))
-```sh
-st -f 'Monospace' -w %3 -e nvim %1
-``` 
-
-you could use another terminal, but it must support `XEmbed`, like [st](http://st.suckless.org/).

@@ -25,7 +25,7 @@ To use an external editor, set the option `editor.external_editor` to `true`, an
 ```
 
 
-## Embedded editor suggestions
+## Editor examples
 
 ### gvim (default)
 ```sh

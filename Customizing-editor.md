@@ -33,16 +33,22 @@ gvim -geom 10x10 --servername %2 --socketid %3 -f -c 'set ft=mail' '+set fileenc
 ```
 
 fancy `gvim` with [Goyo](https://github.com/junegunn/goyo.vim) and [Limelight](https://github.com/junegunn/limelight.vim):
-```sh
-gvim -geom 10x10 --servername %2 --socketid %3 -f -c 'set ft=mail' '+set fileencoding=utf-8' '+set enc=utf-8' '+set ff=unix' -c Goyo -c Limelight! %1
-```
+
+**Embedded**: `gvim -geom 10x10 --servername %2 --socketid %3 -f -c 'set ft=mail' '+set fileencoding=utf-8' '+set enc=utf-8' '+set ff=unix' -c Goyo -c Limelight! %1`
+
+**External**: `gvim -f -c 'set ft=mail' '+set fileencoding=utf-8' '+set enc=utf-8' '+set ff=unix' -c Goyo -c Limelight! %1`
+
 <img src="https://raw.githubusercontent.com/gauteh/astroid/master/doc/astroid-editor-vim.png" width="70%"/>
 
 ### emacs
-```sh
-emacs --parent-id %3 %1
-```
+**Embedded**: `emacs --parent-id %3 %1`
+**External**: `emacs %1`
 <img src="https://raw.githubusercontent.com/gauteh/astroid/master/doc/astroid-editor-emacs.png" width="70%"/>
+
+#### Pro-tip: use emacsclient
+**External**: `emacsclient -q -c %1`
+
+Make sure you have the daemon running or specify a suitable `-a` argument.
 
 #### Pro-tip: use notmuch-message-mode
 

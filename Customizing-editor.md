@@ -1,4 +1,4 @@
-You can choose whether to use an embedded editor (default, does not work on Wayland) or external editor.
+You can choose whether to use an embedded editor (default, but does not work on Wayland) or external editor.
 
 ## Embedded editor
 

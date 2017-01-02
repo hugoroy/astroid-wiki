@@ -30,3 +30,4 @@
 * [[Plugins]]
 * [[Contributing]]
   + [[Style]]
+  + [[Releasing]]

@@ -16,4 +16,5 @@
   * general description
   * main new features with link to full changelist
   * link to download page
+1. update irc topic
 1. Update Arch Linux package (possibly others..)

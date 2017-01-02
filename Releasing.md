@@ -3,6 +3,7 @@
 1. Make sure all stable PRs scheduled for the release are merged
 1. scons
 1. scons test
+1. date the release in History.txt and make a release commit "Relase X.Y"
 1. git tag -s vX.Y # include changes in comment
 1. scons --release
 1. scons --release test

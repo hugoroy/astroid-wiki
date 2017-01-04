@@ -5,6 +5,7 @@
 1. scons test
 1. date the release in History.txt and make a release commit "Relase X.Y"
 1. git tag -s vX.Y # include changes in comment
+1. merge `master` into `release` branch
 1. scons --release
 1. scons --release test
 

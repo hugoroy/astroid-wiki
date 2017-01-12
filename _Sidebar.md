@@ -8,6 +8,7 @@
     + [[Arch Linux]]
     + [[Ubuntu]]
     + [[Debian]]
+    + [[Fedora]]
 * [[Polling]]
   + [[Desktop notification]]
 

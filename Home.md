@@ -16,6 +16,7 @@ Demos (screencasts):
     + [[Arch Linux]]
     + [[Ubuntu]]
     + [[Debian]]
+    + [[Fedora]]
 * [[Polling]]
   + [[Desktop notification]]
 
@@ -38,3 +39,4 @@ Demos (screencasts):
 * [[Plugins]]
 * [[Contributing]]
   + [[Style]]
+  + [[Releasing]]

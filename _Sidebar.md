@@ -11,7 +11,9 @@
     + [[Fedora]]
     + [[NixOS]]
 * [[Polling]]
-  + [[Desktop notification]]
+  + [[Processing mail]]
+      * [[Desktop notification|Processing mail#desktop notification]]
+      * [[Automatic tagging|Processing mail#automatic tagging]]
 
 ## Usage
 

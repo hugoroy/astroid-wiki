@@ -1,1 +1,1 @@
-Use e.g. [notifymuch](https://github.com/kspi/notifymuch) to get desktop notifications of new mail.
+This page has been moved to [[Processing mail|Processing mail#desktop notification]].

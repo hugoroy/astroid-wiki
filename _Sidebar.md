@@ -9,6 +9,7 @@
     + [[Ubuntu]]
     + [[Debian]]
     + [[Fedora]]
+    + [[NixOS]]
 * [[Polling]]
   + [[Desktop notification]]
 

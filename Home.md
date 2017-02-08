@@ -17,6 +17,7 @@ Demos (screencasts):
     + [[Ubuntu]]
     + [[Debian]]
     + [[Fedora]]
+    + [[NixOS]]
 * [[Polling]]
   + [[Desktop notification]]
 

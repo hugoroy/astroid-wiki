@@ -64,3 +64,6 @@ Random tips related to this:
 
 ## Scanning for viruses
 You can scan attachments for viruses using a tool such as [`clamav`](http://www.clamav.net/). Alternatively, this can be done just before you open the attachment, as explained in [[Opening attachments and virus detection]].
+
+## Note: `notmuch` hooks
+See [[Introduction to notmuch]] and notmuch-hooks(5) for an alternative place to put some of the above functionality.

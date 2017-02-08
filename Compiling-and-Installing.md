@@ -30,6 +30,8 @@ this will install the `astroid` binary into `/usr/bin/` and data files into `/us
 * [[Arch Linux]]
 * [[Ubuntu]]
 * [[Debian]]
+* [[Fedora]]
+* [[NixOS]]
 
 ### Particular dependencies (incomplete list)
 - GTK+ >= 3.10

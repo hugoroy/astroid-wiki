@@ -1,7 +1,7 @@
 The [[poll.sh|Polling]] script can contain various functionality for, e.g., processing incoming mail. Here are some examples of that.
 
 ## Checking internet connectivity
-You can check for internet connectivity before fetching mail. This may prevent e.g. offlineimap spending a long time figuring out there is no connection. At the top of the poll script:
+You can check for internet connectivity before fetching mail. This may prevent e.g. `offlineimap` spending a long time figuring out there is no connection. At the top of the poll script:
 ~~~bash
 # check if we have a connection
 if ! ping -w 1 -W 1 -c 1 mail.google.com; then

@@ -42,19 +42,31 @@ fi
 If your window manager supports it, this will bring your attention to the `astroid` window.
 
 ## Automatic tagging
-Automatic tagging of mail can be achieved through `notmuch tag --batch`. See notmuch-tag(1) for details. Here is an example, which should be run after `notmuch new`:
+Automatic tagging of mail can be achieved through `notmuch tag --batch`. See notmuch-tag(1) for details.
+
+To target only incoming mail, we follow the approach in [Approaches to initial tagging of messages](https://notmuchmail.org/initial_tagging/).
+First, add the following to `~/.notmuch-config`:
+~~~
+[new]
+tags=new;
+~~~
+If this property already exists in your `notmuch` config, append `new;` to the list of tags that are added.
+
+Now you can add the following to your poll script, after `notmuch new`:
 ~~~bash
 notmuch tag --batch <<EOF
 
     # Tag urgent mail
-    +urgent subject:URGENT
+    +urgent tag:new and subject:URGENT
 
     # Tag all mail from GitHub as "work"
-    +work from:github
+    +work tag:new and from:github
 
+    # We've finished processing incoming mail
+    -new tag:new
 EOF
 ~~~
-**Note**: This is applied to all mail, not only incoming mail, so it may overwrite tags on old mail that you have set manually. See [this page](https://notmuchmail.org/initial_tagging/) for a way to target only new mail.
+**Note**: If you don't use `tag:new` in your queries, you may overwrite tags on old mail that you have set manually.
 
 Random tips related to this:
 - You can tag email arriving at different accounts using the `to:` query.

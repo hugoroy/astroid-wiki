@@ -10,7 +10,7 @@ Compile without `--release` argument to enable debugging:
 $ scons
 ```
 
-Then run astroid using `gdb`:
+Then run astroid using `gdb` (here without starting the automatic polling):
 
 ```sh
 $ gdb --args ./astroid --no-auto-poll

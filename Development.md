@@ -36,7 +36,7 @@ this creates the file `gmon.out` in the current directory. Use `gprof` to parse 
 $ gprof astroid > prof.out
 ```
 
-and use `gprof2dot` and `dot` to graph the output:
+and use `gprof2dot` and `dot` (part of `graphviz`) to graph the output:
 ```sh
 $ gprof2dot prof.out | dot -Tpng -o prof.png
 ```

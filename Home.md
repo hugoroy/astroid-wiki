@@ -38,7 +38,7 @@ Demos (screencasts):
 * [[Signing, Encrypting and Decrypting]]
 
 
-# Development
+# [[Development]]
 * [[Plugins]]
 * [[Contributing]]
   + [[Style]]

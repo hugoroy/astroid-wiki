@@ -11,7 +11,7 @@
 1. Open the thread
 1. Mark the messages containing patches using `t` (or `T` to mark all)
 1. Press `;` to apply an action to all marked messages
-1. Press `Y` to create an `mbox` with the an synposis of the the marked messages, this is stored on the clipboard
+1. Press `Y` to create an `mbox` with the an synposis of the raw marked messages, this is stored on the clipboard
 1. Open a terminal (or the drop-down terminal using `|`)
 1. Navigate to the repository
 1. Apply the patch using `git am` (or typically `git am -3`)

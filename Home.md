@@ -36,6 +36,7 @@ Demos (screencasts):
   +  [[Customizing editor]]
   +  [[Address completion]]
 * [[Signing, Encrypting and Decrypting]]
+* [[Working with patches in Astroid]]
 
 
 # [[Development]]

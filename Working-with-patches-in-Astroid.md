@@ -7,7 +7,7 @@
 1. Press `Shift-Insert` to paste the patch into `stdin`
 1. Press `Ctrl-D` to complete the paste
 
-## Applying a series of patches
+## Applying a series of patches directly
 1. Open the thread
 1. Mark the messages containing patches using `t` (or `T` to mark all)
 1. Press `;` to apply an action to all marked messages
@@ -17,6 +17,13 @@
 1. Apply the patch using `git am` (or typically `git am -3`)
 1. Press `Shift-Insert` to paste the patch into `stdin`
 1. Press `Ctrl-D` to complete the paste
+
+## Saving a series of patches
+1. Open the thread
+1. Mark the messages containing patches using `t` (or `T` to mark all)
+1. Press `;` to apply an action to all marked messages
+1. Press `s` to save the marked messages to a desired directory
+1. Apply the patches using `git am`
 
 ## Applying an inline diff
 1. Open the message

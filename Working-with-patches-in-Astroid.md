@@ -7,7 +7,7 @@
 1. Press `Shift-Insert` to paste the patch into `stdin`
 1. Press `Ctrl-D` to complete the paste
 
-## Applying a series of patches directly
+## Applying a series of patches
 1. Open the thread
 1. Mark the messages containing patches using `t` (or `T` to mark all)
 1. Press `;` to apply an action to all marked messages
@@ -18,7 +18,7 @@
 1. Press `Shift-Insert` to paste the patch into `stdin`
 1. Press `Ctrl-D` to complete the paste
 
-## Saving a series of patches
+## Saving a series of patches for later merging
 1. Open the thread
 1. Mark the messages containing patches using `t` (or `T` to mark all)
 1. Press `;` to apply an action to all marked messages

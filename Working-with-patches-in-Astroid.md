@@ -35,5 +35,5 @@
 
 ## Sending a revised series using [git-send-email](https://git-scm.com/docs/git-send-email)
 1. Open the original series or the e-mail you wish to reply to
-1. Press `C-y` to yank the message-ID of the original message (this is now stored on the primary clipboard)
+1. Press `Ctrl-y` to yank the message-ID of the original message (this is now stored on the primary clipboard)
 1. Paste this to the `--in-reply-to=` command line option for [`git-send-email`](https://git-scm.com/docs/git-send-email) using `Shift-Insert` in your terminal.

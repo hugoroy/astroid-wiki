@@ -28,7 +28,7 @@
   +  [[Customizing editor]]
   +  [[Address completion]]
 * [[Signing, Encrypting and Decrypting]]
-* [[Applying patches from Astroid]]
+* [[Working with patches in Astroid]]
 
 
 # [[Development]]

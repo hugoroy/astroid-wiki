@@ -22,7 +22,7 @@
 1. Open the thread
 1. Mark the messages containing patches using `t` (or `T` to mark all)
 1. Press `;` to apply an action to all marked messages
-1. Press `s` to save the marked messages to a desired directory
+1. Press `s` to save the marked messages individually to a desired directory
 1. Apply the patches using [`git am`](https://git-scm.com/docs/git-am)
 
 ## Applying an inline diff

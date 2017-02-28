@@ -27,6 +27,7 @@
 * [[Editing and sending]]
   +  [[Customizing editor]]
   +  [[Address completion]]
+  +  [[Missing Attachment Reminder]]
 * [[Signing, Encrypting and Decrypting]]
 * [[Working with patches in Astroid]]
 

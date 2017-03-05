@@ -11,6 +11,8 @@ thread_index.run(echo %1)=w
 
 if you press `w` in the Thread Index the command `echo %1` will be run with `%1` replaced with the `thread`-id from the _currently_ selected thread. 
 
+Hooks also work in the Thread View (e.g. `thread_view.run(echo %1)=w`).
+
 > Tip: You can use `hooks::` as a shortcut for `/home/$USER/.config/astroid/hooks/` (`~` is not supported).
 
 ### Example: Toggle custom tag in Thread Index 

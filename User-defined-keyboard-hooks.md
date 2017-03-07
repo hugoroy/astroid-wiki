@@ -26,13 +26,13 @@ A more useful example is to set up keybindings to toggle custom tags, first crea
 # get a tag as first argument and thread id as second argument
 #
 
-# check if we have tag
-if [[ $(notmuch search thread:$2 and tag:$1) ]]; then
-  echo "removing tag: $1 from thread:$2"
-  notmuch tag -$1 thread:$2
+
+if [[ $(notmuch search thread:$2 and tag:$1) ]]; then # check if the thread matches the tag
+  echo "removing tag: $1 from thread:$2"              # 
+  notmuch tag -$1 thread:$2                           # remove the tag
 else
-  echo "adding tag: $1 to thread:$2"
-  notmuch tag +$1 thread:$2
+  echo "adding tag: $1 to thread:$2"                  #
+  notmuch tag +$1 thread:$2                           # add the tag
 fi
 ``` 
 
@@ -49,6 +49,37 @@ thread_index.run(hooks::toggle todo %1)=M-t
 you can add several lines for different tags. A successful exit status (0) will trigger a refresh of the thread in astroid ensuring it is updated in all thread indexes. The command is passed to: [`Glib::spawn_command_line_sync`](https://developer.gnome.org/glibmm/stable/group__Spawn.html#ga75961831b4dd3979bb8ab508ee3b3de7). The argument (`thread`-id) is substituted into the string with [`ustring::compose()`](https://developer.gnome.org/glibmm/stable/classGlib_1_1ustring.html#a18e1242bc0ad8a961a28fb2198392258). 
 
 > Future run-hooks for other context may use more arguments, or substitute a list of `thread`-ids into the placeholder.
+
+### Example: Toggle custom tag on a single email in Thread View
+
+This is an example like above, but to tag a single email rather than the whole thread.
+
+~/.config/astroid/hooks/togglemail (you can place this anywhere):
+```sh
+#! /usr/bin/bash
+#
+# get a tag as first argument and thread id as second argument
+#
+
+
+if [[ $(notmuch search id:$2 and tag:$1) ]]; then # check if the message matches the tag
+  echo "removing tag: $1 from id:$2"              # 
+  notmuch tag -$1 id:$2                           # remove the tag
+else
+  echo "adding tag: $1 to thread:$2"              #
+  notmuch tag +$1 id:$2                           # add the tag
+fi
+``` 
+
+then create a keybinding in:
+~/.config/astroid/keybindings:
+```sh
+# toggle queue
+thread_index.run(hooks::togglemail queue %2)=w
+
+# toggle todo
+thread_index.run(hooks::togglemail todo %2)=M-t
+```
 
 ### Example: un-spam a single mail
 

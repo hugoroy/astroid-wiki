@@ -50,6 +50,44 @@ you can add several lines for different tags. A successful exit status (0) will 
 
 > Future run-hooks for other context may use more arguments, or substitute a list of `thread`-ids into the placeholder.
 
+### Example: un-spam a single mail
+
+This example assumes that e.g. your server-side spam filter falsely classified a mail as spam. You want to remove the spam tag (if existent) and move the mailfile back in you Inbox.
+
+Create the executable file `~/.config/astroid/hooks/unspam`:
+```sh
+#!/bin/bash
+#
+# $1 = message id
+#
+
+# All directory names relative to mail folder's root
+DIR_JUNK="INBOX.Junk"   # Junk directory path
+DIR_INBOX="INBOX"       # Inbox directory path
+
+ID=$1
+FILE=$(notmuch search --exclude=false --output=files "id:$ID")    # get actual file path of MID
+
+if [[ $(notmuch search "id:$ID" and tag:spam) ]]; then  # only do something if mail is spam
+  notmuch tag -spam -- "id:$ID"                         # unspam mail
+fi
+
+if $(echo $FILE | grep -q $DIR_JUNK); then                  # if mail is in spam dir
+  FILE_NEW=$(echo $FILE | sed "s|$DIR_JUNK/|$DIR_INBOX/|")  # replace spamdir with inbox dir
+  mv "$FILE" "$FILE_NEW"                                    # move from spamdir to inbox
+fi
+```
+
+then create a keybinding in:
+~/.config/astroid/keybindings:
+```sh
+# unspam a single mail
+thread_view.run(hooks::unspam %2)=w
+```
+
+Please note that we've used `%2` as first argument here. This is replaced by the selected message's Message-ID.
+Please also note that this hook now only works in Thread_View. However, you can extend the keybinding to also work in Thread_Index.
+
 ## Reference of run-hooks and arguments
 
 #### Thread Index

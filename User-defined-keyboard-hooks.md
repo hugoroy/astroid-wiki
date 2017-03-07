@@ -58,7 +58,7 @@ This is an example like above, but to tag a single email rather than the whole t
 ```sh
 #! /usr/bin/bash
 #
-# get a tag as first argument and thread id as second argument
+# get a tag as first argument and message id as second argument
 #
 
 

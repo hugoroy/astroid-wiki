@@ -9,7 +9,7 @@ The run-hooks are configured through the keybindings file, the most rudimentary 
 thread_index.run(echo %1)=w
 ```
 
-if you press `w` in the Thread Index the command `echo %1` will be run with `%1` replaced with the `thread`-id from the _currently_ selected thread. 
+if you press `w` in the Thread Index the command `echo %1` will be run with `%1` replaced with the `thread`-id from the _currently_ selected thread. With a command `echo %2`, `%2` is replaced with the `message`-id from the _currently_ selected email.
 
 Hooks also work in the Thread View (e.g. `thread_view.run(echo %1)=w`).
 

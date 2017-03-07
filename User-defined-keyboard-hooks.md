@@ -66,7 +66,7 @@ if [[ $(notmuch search id:$2 and tag:$1) ]]; then # check if the message matches
   echo "removing tag: $1 from id:$2"              # 
   notmuch tag -$1 id:$2                           # remove the tag
 else
-  echo "adding tag: $1 to thread:$2"              #
+  echo "adding tag: $1 to id:$2"                  #
   notmuch tag +$1 id:$2                           # add the tag
 fi
 ``` 

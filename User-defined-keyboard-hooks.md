@@ -101,4 +101,10 @@ Please also note that this hook now only works in Thread_View. However, you can 
 > - **0 (true)** - an **emit_thread_updated** signal is emitted, causing the thread to be updated in all views.
 > - **!0 (false)** - no action
 
+#### Thread View
 
+> **thread_view.run (cmd %1 %2)=keyspec**
+>
+> Arguments: two
+> - **thread-id** - currently selected thread
+> - **mid** - currently selected message (message-id)

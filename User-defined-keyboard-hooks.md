@@ -75,10 +75,10 @@ then create a keybinding in:
 ~/.config/astroid/keybindings:
 ```sh
 # toggle queue
-thread_index.run(hooks::togglemail queue %2)=w
+thread_view.run(hooks::togglemail queue %2)=w
 
 # toggle todo
-thread_index.run(hooks::togglemail todo %2)=M-t
+thread_view.run(hooks::togglemail todo %2)=M-t
 ```
 
 ### Example: un-spam a single mail

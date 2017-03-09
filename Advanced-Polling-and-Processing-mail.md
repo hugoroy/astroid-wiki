@@ -123,9 +123,10 @@ fi
 maxsyncaccounts = 2 # set to greater than the accounts you are syncing
 ```
 
+If you need to synchronize many folders or messages from the same account:
 ```
 [repository RemoteA]
-maxconnection = 3 # or something else
+maxconnections = 3 # or something else
 ```
 
 > Also: Use `folderfilter` to only synchronize necessary folders.

@@ -19,9 +19,10 @@ Demos (screencasts):
     + [[Fedora]]
     + [[NixOS]]
 * [[Polling]]
-  + [[Processing mail]]
-      * [[Desktop notification|Processing mail#desktop notification]]
-      * [[Automatic tagging|Processing mail#automatic tagging]]
+  + [[Advanced Polling and Processing mail]]
+      * [[Desktop notification|Advanced Polling and Processing mail#desktop notification]]
+      * [[Automatic tagging|Advanced Polling and Processing mail#automatic tagging]]
+      * [[Advanced Polling|Advanced Polling and Processing mail#advanced polling]]
 
 ## Usage
 

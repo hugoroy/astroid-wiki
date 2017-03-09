@@ -89,12 +89,12 @@ With faster polling times it is possible to check for email more often and have 
 > Note that GMail seems to [throttle the IMAP connection](https://support.google.com/a/answer/1071518?hl=en), this makes could slow down synchronization of GMail accounts using offlineimap.
 
 #### Quick sync
-It is only necessary to a full synchronization if you need to synchronize flags and X-Keywords, otherwise a quick sync may be performed using `offlineimap -q`. The following code demonstrates doing a full sync only every two hours:
+It is only necessary to a full synchronization if you need to synchronize flags and X-Keywords, otherwise a quick sync may be performed using `offlineimap -q`. The following code demonstrates how to only do a full sync every two hours:
 
 ```sh
-# do a full offlineimap sync once every two hours, otherwise only quicksync
-lastfull_f=~/.cache/astroid/offlineimap-last-full
-if [ -e $cache ]; then
+## do a full offlineimap sync once every two hours, otherwise only quicksync
+lastfull_f=~/.cache/astroid/offlineimap-last-full # storing state
+if [ -f $lastfull_f ]; then
   lastfull=$(cat $lastfull_f)
 else
   lastfull=0
@@ -104,15 +104,25 @@ delta=$((2 * 60 * 60)) # seconds between full sync
 now=$(date +%s)
 diff=$(($now - $lastfull))
 
-# sync maildir <-> imap
 if [ $diff -gt $delta ]; then
   echo "full offlineimap sync.."
-  offlineimap -u quiet || fail "offlineimap did not complete."
+  offlineimap -u quiet || exit 1
   echo -n $now > $lastfull_f
 else
   echo "quick offlineimap sync.."
-  offlineimap -q -u quiet || fail "offlineimap did not complete."
+  offlineimap -q -u quiet || exit 1
 fi
 
+```
+
+#### Settings that can increase speed
+```
+[general]
+maxsyncaccounts = 2 # set to greater than the accounts you are syncing
+```
+
+```
+[repository RemoteA]
+maxconnection = 3 # or something else
 ```
 

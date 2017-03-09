@@ -74,8 +74,45 @@ Random tips related to this:
 - You can tag email from certain people with the `from:` query.
 - Threads can be muted using [excluded tags](https://notmuchmail.org/excluding/).
 
+### Note: `notmuch` hooks
+See [[Introduction to notmuch]] and notmuch-hooks(5) for an alternative place to put some of the above functionality.
+
 ## Scanning for viruses
 You can scan attachments for viruses using a tool such as [`clamav`](http://www.clamav.net/). Alternatively, this can be done just before you open the attachment, as explained in [[Opening attachments and virus detection]].
 
-## Note: `notmuch` hooks
-See [[Introduction to notmuch]] and notmuch-hooks(5) for an alternative place to put some of the above functionality.
+## Advanced Polling
+
+### Fast polling
+
+With faster polling times it is possible to check for email more often and have it delivered more instantly. `IDLE` does not work very well in offlineimap, but it is possible to improve performance significantly. These tips are based on some [old offlineimap documentation](http://www.offlineimap.org/doc/versions/v6.5.6/MANUAL.html#synchronization-performance).
+
+> Note that GMail seems to [throttle the IMAP connection](https://support.google.com/a/answer/1071518?hl=en), this makes could slow down synchronization of GMail accounts using offlineimap.
+
+#### Quick sync
+It is only necessary to a full synchronization if you need to synchronize flags and X-Keywords, otherwise a quick sync may be performed using `offlineimap -q`. The following code demonstrates doing a full sync only every two hours:
+
+```sh
+# do a full offlineimap sync once every two hours, otherwise only quicksync
+lastfull_f=~/.cache/astroid/offlineimap-last-full
+if [ -e $cache ]; then
+  lastfull=$(cat $lastfull_f)
+else
+  lastfull=0
+fi
+
+delta=$((2 * 60 * 60)) # seconds between full sync
+now=$(date +%s)
+diff=$(($now - $lastfull))
+
+# sync maildir <-> imap
+if [ $diff -gt $delta ]; then
+  echo "full offlineimap sync.."
+  offlineimap -u quiet || fail "offlineimap did not complete."
+  echo -n $now > $lastfull_f
+else
+  echo "quick offlineimap sync.."
+  offlineimap -q -u quiet || fail "offlineimap did not complete."
+fi
+
+```
+

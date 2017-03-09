@@ -12,8 +12,8 @@
     + [[NixOS]]
 * [[Polling]]
   + [[Advanced Polling and Processing mail]]
-      * [[Desktop notification|Advanced Polling and Processing mai#desktop notification]]
-      * [[Automatic tagging|Advanced Polling and Processing mai#automatic tagging]]
+      * [[Desktop notification|Advanced Polling and Processing mail#desktop notification]]
+      * [[Automatic tagging|Advanced Polling and Processing mail#automatic tagging]]
 
 ## Usage
 

@@ -89,7 +89,9 @@ With faster polling times it is possible to check for email more often and have 
 > Note that GMail seems to [throttle the IMAP connection](https://support.google.com/a/answer/1071518?hl=en), this makes could slow down synchronization of GMail accounts using offlineimap.
 
 #### Quick sync
-It is only necessary to a full synchronization if you need to synchronize flags and X-Keywords, otherwise a quick sync may be performed using `offlineimap -q`. The following code demonstrates how to only do a full sync every two hours:
+A quick sync only compares the number of files locally and on the IMAP side, this should detect changes in almost all cases (except if you delete an email remotely, and one is added so that the number is the same).
+
+The following script demonstrates how to only do a full sync every two hours:
 
 ```sh
 ## do a full offlineimap sync once every two hours, otherwise only quicksync

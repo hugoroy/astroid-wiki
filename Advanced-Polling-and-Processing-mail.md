@@ -128,5 +128,5 @@ maxsyncaccounts = 2 # set to greater than the accounts you are syncing
 maxconnection = 3 # or something else
 ```
 
-> Use folderfilters to only synchronize necessary folders.
+> Also: Use `folderfilters` to only synchronize necessary folders.
 

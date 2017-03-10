@@ -137,13 +137,13 @@ By default astroid is designed to regularly initiate poll for new messages. If y
 #### Notify about start and stop of polling
 > This method enables astroid to figure out what changes have been made automatically, and show a polling spinner when the external polling is running
 
-1. Before polling run: `$ astroid --start-polling`
-1. Poll
-1. When polling is done: `$ astroid --stop-polling`
+```sh
+astroid --start-polling
+# poll any changes
+astroid --stop-polling
+```
 
-> Make sure that you _always_ call `--stop-polling`, even if polling fails.
-
-Astroid will detect any changes between the two calls.
+Make sure that you _always_ call `--stop-polling`, even if polling fails. Astroid will detect any changes between the two calls.
 
 #### Notify that anything since LASTMOD should be refreshed
 > In this method you need to take care of what lastmod revision the notmuch database is before you start.

@@ -120,7 +120,8 @@ fi
 #### Settings that can increase speed
 ```
 [general]
-maxsyncaccounts = 2 # set to greater than the accounts you are syncing
+maxsyncaccounts = 2  # set to greater than the accounts you are syncing
+socktimeout     = 10 # fail on slow network quicker than OS (I use this to fail quickly in case network fails / is turned off)
 ```
 
 If you need to synchronize many folders or messages from the same account:

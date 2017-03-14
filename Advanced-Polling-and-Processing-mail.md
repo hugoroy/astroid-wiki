@@ -148,7 +148,7 @@ astroid --stop-polling
 
 Make sure that you _always_ call `--stop-polling`, even if polling fails. Astroid will detect any changes between the two calls.
 
-#### 2. Notify that anything since given datbase revision should be refreshed
+#### 2. Notify that anything since given database revision should be refreshed
 > In this method you need to take care of what lastmod revision the notmuch database is before you start.
 
 ```sh

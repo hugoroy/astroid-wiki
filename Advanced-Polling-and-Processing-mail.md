@@ -133,9 +133,11 @@ maxconnections = 3 # or something else
 > Also: Use `folderfilter` to only synchronize necessary folders.
 
 ### External polling
-By default astroid is designed to regularly initiate poll for new messages. If you have a set up which fetches e-mail outside astroid (e.g. a cron job, an IMAP IDLE watch, offlineimap running in the background) you need to notify astroid that when there is new messages. You have two options:
+By default astroid is designed to regularly initiate poll for new messages. If you have a set up which fetches e-mail outside astroid (e.g. a cron job, an IMAP IDLE watch, offlineimap running in the background) you need to notify astroid that when there is new messages. You have **two alternative**:
 
-#### Notify about start and stop of polling
+> You should only use one of these alternatives at the same time!
+
+#### 1. Notify by indicating start and stop of polling
 > This method enables astroid to figure out what changes have been made automatically, and show a polling spinner when the external polling is running
 
 ```sh
@@ -146,9 +148,11 @@ astroid --stop-polling
 
 Make sure that you _always_ call `--stop-polling`, even if polling fails. Astroid will detect any changes between the two calls.
 
-#### Notify that anything since LASTMOD should be refreshed
+#### 2. Notify that anything since given datbase revision should be refreshed
 > In this method you need to take care of what lastmod revision the notmuch database is before you start.
 
-1. Before poll, store notmuch revision by parsing: `$ notmuch count --lastmod`
-1. Poll
-1. If changes, call: `$ astroid --refresh REVISION_BEFORE_POLL`
+```sh
+REVISION_BEFORE_POLL=$(notmuch count --lastmod) # store database revision from before poll
+# poll
+astroid --refresh $REVISION_BEFORE_POLL
+```

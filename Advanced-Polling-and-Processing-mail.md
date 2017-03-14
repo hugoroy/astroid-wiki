@@ -133,9 +133,9 @@ maxconnections = 3 # or something else
 > Also: Use `folderfilter` to only synchronize necessary folders.
 
 ### External polling
-By default astroid is designed to regularly initiate poll for new messages. If you have a set up which fetches e-mail outside astroid (e.g. a cron job, an IMAP IDLE watch, offlineimap running in the background) you need to notify astroid that when there is new messages. You have two **alternatives**:
+By default astroid is designed to regularly initiate poll for new messages. If you have a set up which fetches e-mail outside astroid (e.g. a cron job, an IMAP IDLE watch, offlineimap running in the background) you need to notify astroid about new messages. You have two _alternatives_:
 
-> You should _only use one of these alternatives_ at the same time!
+> You should **only use one of these alternatives** at the same time!
 
 #### 1. Notify by indicating start and stop of polling
 > This method enables astroid to figure out what changes have been made automatically, and show a polling spinner when the external polling is running

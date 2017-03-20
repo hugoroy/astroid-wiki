@@ -158,7 +158,7 @@ astroid --refresh REVISION_BEFORE_POLL
 ```
 
 
-## Instant email; from IMAP to the desktop
+# Instant email; from IMAP to the desktop
 Here's a specific example of a complete email setup using Astroid as the MUA, to provide real-time collection and notification of messages in a modern Linux system (Ubuntu in this case), without relying on a particular desktop distribution.
 
 Additionally, each component used can be replaced independently, as long as you keep an eye on the scripts and configs where some assumptions are encoded. As well as Astroid, I use `alot` to read my Maildir/notmuch occasionally. To refresh alot's UI, you send a SIGUSR1 signal. I have this in my notmuch `post-new` hook but it is not included in this example.
@@ -297,8 +297,20 @@ echo "poll.sh running at $(date)"
 /bin/systemctl --user restart fetchmail-from-exchange.service
 ~~~
 
+### Normal logging from this setup
+Here's an example of the normal syslog entries created by this process :- 
+~~~
+Mar 20 15:29:36 holdfast fetchmail[23663]: 1 message for USERNAME at SERVER (folder SOURCEFOLDER).
+Mar 20 15:29:36 holdfast notmuch: Astroid polling start requested during pre-new hook
+Mar 20 15:29:39 holdfast notmuch: calling notify-send 'NM: 1 new message' 'SENDER : SUBJECT'
+Mar 20 15:29:39 holdfast org.freedesktop.Notifications[28641]: ** (notify-osd:29928): WARNING **: dnd_is_screensaver_active(): Got error "The name org.gnome.ScreenSaver was not provided by any .service files"
+Mar 20 15:29:39 holdfast org.freedesktop.Notifications[28641]: ** (notify-osd:29928): WARNING **: dnd_is_idle_inhibited(): got error "The name org.gnome.SessionManager was not provided by any .service files"
+Mar 20 15:29:39 holdfast notmuch: Astroid polling stop requested during post-new hook
+Mar 20 15:29:39 holdfast fetchmail[23663]: reading message USERNAME@SERVER:1 of 1 (1667 header octets) (9465 body octets) flushed
+~~~
+There are two error messages created by `notify-send` that represent the fact I'm not actually running any desktop session that Gnome recognises. If you are, you probably won't see these errors being logged.
 
-### Current unresolved problems with this approach
+## Current unresolved problems with this approach
 * If a remote X session is established (i.e. you use ssh to connect), and you then run a new instance of Astroid, you will probably get $DISPLAY updated correctly and be able to receive notifications on the remote session; however if a local copy of Astroid is still running, the two poll scripts will fight with each other as they run.
 * Again for a remote session, you may well be able to talk to Astroid correctly, but if you require GPG support it is likely that your agent will still be running on the original $DISPLAY. This may make it effectively impossible to create messages until you kill the original agent (and therefore lose your session in there). When using `alot` (a console-based MUA similar to Astroid) I unset $DISPLAY, and that seems to encourage a text-based prompt from the GPG agent.
 * Sometimes (most often when I send email out, apparently) it looks like `fetchmail` detects a new incoming message during `notmuch new`, and I get a Xapian lock conflict. Under these circumstances, the notmuch `post-hook` doesn't seem to run, and the Astroid poller doesn't stop.

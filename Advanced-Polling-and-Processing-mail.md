@@ -186,7 +186,6 @@ Under most current Linux distributions, an instance of `systemd --user` is creat
 $ cat ~/.config/systemd/user/fetchmail.service 
 [Unit]
 Description=Fetchmail from Exchange using IDLE
-Wants=onwriteMaildir.path
 
 [Service]
 # fetchmail gets all its config from the CLI (except for user password)

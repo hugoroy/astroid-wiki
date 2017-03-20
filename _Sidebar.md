@@ -15,6 +15,7 @@
       * [[Desktop notification|Advanced Polling and Processing mail#desktop notification]]
       * [[Automatic tagging|Advanced Polling and Processing mail#automatic tagging]]
       * [[Advanced Polling|Advanced Polling and Processing mail#advanced polling]]
+  + [[Instant Email; from IMAP to the Desktop|Advanced-Polling-and-Processing-mail#instant-email-from-imap-to-the-desktop]]
 
 ## Usage
 

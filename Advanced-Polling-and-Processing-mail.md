@@ -152,9 +152,9 @@ Make sure that you _always_ call `--stop-polling`, even if polling fails. Astroi
 > In this method you need to take care of what lastmod revision the notmuch database is before you start.
 
 ```sh
-notmuch count --lastmod # parse and store database revision from before poll
-# poll
-astroid --refresh REVISION_BEFORE_POLL
+revision=$(notmuch count --lastmod | cut -f3) # store database revision from before poll
+# poll..
+astroid --refresh $revision # update anything that changed since revision
 ```
 
 

@@ -49,7 +49,7 @@ Some self-explanatory variables that you probably want to configure are (where `
 At last, you need to define which program to call to send your email. For instance:
 
 * if you use [msmtp](http://msmtp.sourceforge.net/): `"accounts.id.sendmail": "msmtp --read-envelope-from -t"` 
-* if you use a sendmail compatible solution (e.g. postfix), the line should be: `"sendmail": "sendmail -t -v"`
+* if you use a sendmail compatible solution (e.g. postfix), the line should be: `"sendmail": "sendmail -t"`
 
 [notmuchintro]: ./Introduction-to-notmuch
 

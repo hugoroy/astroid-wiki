@@ -157,6 +157,9 @@ revision=$(notmuch count --lastmod | cut -f3) # store database revision from bef
 astroid --refresh $revision # update anything that changed since revision
 ```
 
+# Fast GMail syncing
+
+For a fast, and direct, synchronization between [GMail](http://gmail.com/) and `notmuch`, [gmailieer](https://github.com/gauteh/gmailieer) is an option. It uses the GMail API to do incremental synchronization of tags and e-mails, achieving fast polling for GMail accounts.
 
 # Instant email; from IMAP to the desktop
 Here's a specific example of a complete email setup using Astroid as the MUA, to provide real-time collection and notification of messages in a modern Linux system (Ubuntu in this case), without relying on a particular desktop distribution.
